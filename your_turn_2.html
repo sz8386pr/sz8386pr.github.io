@@ -36,14 +36,35 @@
   $(function(){
 
     // TODO update the numbers in total_visited and total_not_visited spans
-
     // TODO select all class=place elements. When they are clicked, add the class "visited"
-
     // TODO keep the the numbers in total_visited and total_not_visited spans updated as user selects more places
-
     // TODO Display an alert when all destinations have been visited
 
+    // Initial visited/not visited display
+    var total_visited = $('.visited').length;
+    var total_not_visited = $('.place').length - $('.visited').length;
+    $('#total_visited').html(total_visited);
+    $('#total_not_visited').html(total_not_visited);
+
+    // updateCounter() when .place is clicked
+    $('.place').click(updateCounter);
+
   });
+
+  // It toggles the class to .visited when clicked, and also updates the number of visited/not visited places
+  function updateCounter() {
+    $(this).toggleClass('visited');
+    var total_visited = $('.visited').length;
+    var total_not_visited = $('.place').length - $('.visited').length;
+    $('#total_visited').html(total_visited);
+    $('#total_not_visited').html(total_not_visited);
+
+    // If total_visited reaches 4, popup an alert
+    if (total_visited === 4) {
+      alert("All destinations have been visited!");
+    }
+
+  }
 
 </script>
 
