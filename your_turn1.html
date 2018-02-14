@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Turn</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<h2>A list of recently-released movies. Each li element should hide individually when clicked.</h2>
+<style>
+  .bold {
+    font-weight: bold;
+  }
+</style>
+
+<ul>
+  <li>Wonder Woman</li>
+  <li>Hidden Figures</li>
+  <li>The Emoji Movie</li>
+  <li>Spiderman Homecoming</li>
+</ul>
+
+<h2>All the b elements should hide when any b element is clicked</h2>
+
+<P>The <b>really cool</b> JQuery library can make <b>very long</b> JavaScript code
+  much <b>much much</b> more concise, at the expense of loading another library.</P>
+
+<script>
+
+  // JQuery document ready callback
+  $(function(){
+
+    $("li").click(toggleBold);
+
+    $("b").click(fadeOutAll);
+    // $('ul').click(function() {
+    //   $('h2').hide();
+    // })
+
+  });
+
+  function hideOne() {
+    $(this).hide();
+  }
+
+  function fadeOutAll() {
+    $("b").fadeOut(1500);
+  }
+
+  function toggleBold() {
+    $(this).toggleClass("bold");
+  }
+
+</script>
+
+</body>
+
+</html>
