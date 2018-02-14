@@ -10,11 +10,6 @@
 <body>
 
 <h2>A list of recently-released movies. Each li element should hide individually when clicked.</h2>
-<style>
-  .bold {
-    font-weight: bold;
-  }
-</style>
 
 <ul>
   <li>Wonder Woman</li>
@@ -33,26 +28,15 @@
   // JQuery document ready callback
   $(function(){
 
-    $("li").click(toggleBold);
-
-    $("b").click(fadeOutAll);
-    // $('ul').click(function() {
-    //   $('h2').hide();
-    // })
+      // TODO write your code here
+      $("li").click(function() {
+        $(this).fadeOut(1000);
+      });
+      $("b").click(function() {
+        $("b").fadeOut(1500);
+      })
 
   });
-
-  function hideOne() {
-    $(this).hide();
-  }
-
-  function fadeOutAll() {
-    $("b").fadeOut(1500);
-  }
-
-  function toggleBold() {
-    $(this).toggleClass("bold");
-  }
 
 </script>
 
