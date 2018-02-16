@@ -1,0 +1,131 @@
+<!-- Part 1: To Do list in JQuery
+
+Create a web page with an empty list, and an input box. You will use this to create a to do list. When you type something in the input box, it will be added to the to do list.  Make sure you don't add empty items to the list.
+
+Decide on one style to represent items that are not done.
+
+Decide on another style to represent items that you have done; which will be list elements with the 'done' class.  For example, you could use text-decoration: line-through;  to put a line through the text. Or, another style of your choice.
+
+Create a CSS stylesheet with one style for regular list items, and a different style for list items with the class 'done'.
+
+When you click on one of your list items, it should toggle between done and not done. You should use the toggleClass method to add or remove the 'done' class; so that the appropriate CSS style is applied.
+
+Part 2:
+
+Add a button to remove the items you have done. When you click the button, all of the list items that have the class 'done' will be removed.
+
+Part 3: To Do List, move done items:
+
+Modify so that when you click the remove button, remove this list item (or items); and add a row to a table on the same page. The new row will have the text of the item in one column, and the date that you marked it done in the second column.  Make sure you don't re-add items to the table when you click the button multiple times.
+
+Part 4: To Do List Animation:
+
+Use the fade, or slide, or animate functions to animate the list items being deleted from the list and being added to the table. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .todo {
+      font-weight: bold;
+    }
+
+    .done {
+      text-decoration: line-through;
+      color: grey;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+      width: 300px;
+    }
+
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div>
+    <form>
+      <input type="text" id="todo_input">
+      <button type="button" id="addButton">Add to To Do List</button>
+    </form>
+  </div>
+
+  <div>
+    <h1>To Do List</h1>
+    <p>Click on the list item to make it as finished</p>
+
+    <ul id="todo_list"></ul>
+    <button type='button' id='removeButton'>Remove finished tasks</button>
+  </div>
+  <br/>
+  <div>
+    <table id='finishedTaskTable'>
+      <thead>
+        <tr>
+          <th>Finished Task</th>
+          <th>Finished Date</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+
+
+  <script>
+
+  $(function(){
+    $("#addButton").click(addToDoList);
+    $('#todo_list').on("click", 'li', toggleDoneNotDone);
+    $('#removeButton').on('click', addToTable);
+    $('#removeButton').on('click', removeFinished);
+
+  });
+
+  function addToDoList() {
+    var newToDo = $('#todo_input').val();
+
+    if (newToDo.length <= 0) {
+      alert('There is nothing to add!');
+    }
+    else {
+      $('#todo_list').append('<li class=\'todo\'>' + newToDo + '</li>');
+      $('#todo_input').val('');
+    }
+  }
+
+  function toggleDoneNotDone() {
+    $(this).toggleClass('done');
+  }
+
+  // Reference from https://stackoverflow.com/questions/8376033/fadeout-and-remove-an-element-after-a-few-seconds
+  function removeFinished() {
+    $('.done').fadeOut('slow', function(){
+      $(this).remove();
+    });
+  }
+
+  function addToTable() {
+
+    // Add done class objects into an array and reverse it, so it will look better when using pop() later on.
+    var finTasks = $('.done').get();
+    finTasks = finTasks.reverse();
+
+    // Get the current Month-Day-Year string value
+    var date = new Date();
+    var currentDate = date.getMonth()+1 + '-' + date.getDate() + '-' + date.getFullYear();
+
+    // Append finished tasks and the date finished onto the table
+    listSize = finTasks.length;
+    for (var x = 0; listSize > x; x++) {
+      finished = finTasks.pop().innerText;
+      $('#finishedTaskTable tbody').append('<tr><td>' + finished + '</td><td>' + currentDate + '</td></tr>');
+    }
+
+  }
+  </script>
+
+</body>
