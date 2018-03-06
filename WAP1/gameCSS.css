@@ -1,31 +1,55 @@
-body{margin:0; font-family: Verdana, Geneva, sans-serif;}
+body{margin:0; font-family: Verdana, Geneva, sans-serif; overflow: hidden}
 iframe{margin:0;width:100%; border-left:1px solid black; border-right:1px solid black;}
 p{margin:0}
+table{align-self: center}
+td{
+    font-size: 2.5vh;
+}
 
+.gameBody {
+    background-color: #272926;
+}
 
-#main_block {
-    font-size:0;
+#mainBlock {
+    /*border: solid black 3px;*/
+    margin: 5px;
+    font-size: 0;
     max-height: 900px;
+    max-width: 810px;
+    /*height: 100%;*/
 }
 
 .text-center {
     text-align: center;
 }
 
-
-
-.menuDiv {
-    width: 25%;
-    height: 100vh;
-    background-color: #50626c;
-    min-height: 400px;
+.frame {
+    overflow:hidden;
+    height:100%;
+    width:50%;
 
 }
 
-.mainDiv {
+#menuFrame {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: calc(100% - 6px);
+    background-color: #50626c;
+    max-width: 201px;
+    max-height: 894px;
+
+}
+
+#mainFrame {
+    position: relative;
+    top: 0;
+    left: 0;
     width: 75%;
-    height: 100vh;
-    min-height: 400px;
+    height: calc(100% - 6px);
+    max-width: 607px;
+    max-height: 894px;
 }
 
 
@@ -51,8 +75,10 @@ p{margin:0}
     height: 25vh;
     width: 100%;
     font-weight: bold;
-    font-size: calc(3.5vh + 2vw);
+    font-size: 2vh;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -63,10 +89,20 @@ p{margin:0}
     background-size: 100vw;
 }
 
-.enemyHPBar {
-    margin-top: 1px;
-    display: flex;
+
+#stageIndicator {
     height: 5vh;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-weight: bolder;
+    text-align: center;
+    font-size: 3vh;
+}
+
+
+.enemyHPBar {
+
+    height: 5vh;
+
 }
 
 
@@ -76,10 +112,13 @@ p{margin:0}
 
 }
 
-#hp {
+#enemyHP {
     font-size: 3vh;
     text-align: center;
 }
 
+#enemyBar {
+    padding: .5vh 0;
+}
 
 
