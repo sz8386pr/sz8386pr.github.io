@@ -18,24 +18,44 @@
     <div class="stats">
         <table>
             <tr>
-                <th>PLAYER STATS</th>
+                <td colspan="3" class="statTitle">PLAYER STATS</td>
             </tr>
             <tr>
-                <td>HP: <span id="hp"></span></td>
+                <td class="statHeader">HP:</td>
+                <td class="statNumber"> <span id="hp"></span></td>
+                <td class="statPlus" id="hpPlus"></td>
             </tr>
             <tr>
-                <td>ATT: <span id="att"></span></td>
+                <td class="statHeader">ATT:</td>
+                <td class="statNumber"> <span id="att"></span></td>
+                <td class="statPlus" id="attPlus"></td>
             </tr>
             <tr>
-                <td>DEF: <span id="def"></span></td>
-            </tr>
-            <tr></tr>
-            <tr></tr>
-            <tr>
-                <td>XP: <span id="xp"></span></td>
+                <td class="statHeader">DEF:</td>
+                <td class="statNumber"> <span id="def"></span></td>
+                <td class="statPlus" id="defPlus"></td>
             </tr>
             <tr>
-                <td>GOLD: <span id="gold">2</span></td>
+                <td class="statHeader">SP:</td>
+                <td colspan="2" class="statNumber"> <span id="sp"></span></td>
+            </tr>
+            <tr>
+                <td class="statHeader">GOLD:</td>
+                <td colspan="2" class="statNumber"> <span id="gold"></span></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="etc">
+        <table id="menuTable">
+            <tr>
+                <td id="pause" class="menuCell"><img src="images/pause.png" class="icon">PAUSE</td>
+            </tr>
+            <tr>
+                <td id="shop" class="menuCell"><img src="images/shop.png" class="icon">SHOP</td>
+            </tr>
+            <tr>
+                <td id="help" class="menuCell"><img src="images/help.png" class="icon">HELP</td>
             </tr>
         </table>
     </div>

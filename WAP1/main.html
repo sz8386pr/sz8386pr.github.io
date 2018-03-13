@@ -16,7 +16,117 @@
 <div id="mainBlock">
     <iframe src="menu.html" scrolling="no" frameborder="0" id="menuFrame"></iframe>
     <iframe src="dungeon.html" scrolling="no" frameborder="0" id="mainFrame"></iframe>
+    <!--popup menu reference from https://www.formget.com/how-to-create-pop-up-contact-form-using-javascript/-->
 </div>
+
+<div id="popup" >
+
+    <div id="shopDiv">
+        <form>
+            <img class="closeIcon" src="images/close.png">
+            <table id="purchaseTable">
+                <tr>
+                    <td>Item Name</td>
+                    <td>Stat Bonus</td>
+                    <td>Gold Cost</td>
+                    <td>Purchase</td>
+                </tr>
+
+                <tr>
+                    <td>Cloth Armor</td>
+                    <td>+10 DEF</td>
+                    <td>20 Gold</td>
+                    <td><input type="checkbox" name="armor" value="cloth"></td>
+
+                </tr>
+
+                <tr>
+                    <td>Leather Armor</td>
+                    <td>+30 DEF</td>
+                    <td>55 Gold</td>
+                    <td><input type="checkbox" name="armor" value="leather"></td>
+
+                </tr>
+
+                <tr>
+                    <td>Steel Armor</td>
+                    <td>+55 DEF</td>
+                    <td>95 Gold</td>
+                    <td><input type="checkbox" name="armor" value="steel"></td>
+                </tr>
+
+                <tr>
+                    <td>Health Potion</td>
+                    <td>+50 HP</td>
+                    <td>35 Gold</td>
+                    <td><input type="checkbox" name="potion" value="50"></td>
+
+                </tr>
+
+                <tr>
+                    <td>Dagger</td>
+                    <td>+10 DEF</td>
+                    <td>20 Gold</td>
+                    <td><input type="checkbox" name="weapon" value="dagger"></td>
+
+                </tr>
+
+                <tr>
+                    <td>Cloth Armor</td>
+                    <td>+30 DEF</td>
+                    <td>55 Gold</td>
+                    <td><input type="checkbox" name="armor" value="long"></td>
+
+                </tr>
+
+                <tr>
+                    <td>Cloth Armor</td>
+                    <td>+55 DEF</td>
+                    <td>95 Gold</td>
+                    <td><input type="checkbox" name="armor" value="great"></td>
+
+                </tr>
+                <tr>
+                    <td colspan="4" id="purchaseCell"><button id="purchaseButton">PURCHsASE</button></td>
+                </tr>
+
+            </table>
+
+
+
+        </form>
+     </div>
+
+    <div id="helpDiv">
+        <div id="helpMenu"><img class="closeIcon" src="images/close.png">
+            <p>
+                <h2>HELP MENU</h2>
+                Endless Dungeon<br>
+                by Scott Kim<br>
+                <br>
+                Enemy attacks every 5 seconds.<br>
+                Click ATTACK button to attack the enemy.<br>
+                When enemy health bar drops to 0, you defeat the enemy.<br>
+                When your health drops to 0, you die and you lose.<br>
+                <br>
+                You will get 5 Skill Points (SP) after every stage.<br>
+                Use it wisely.<br>
+                <br>
+                You can purchase items with golds to upgrade your stats.<br>
+                <br>
+                Press pause button to pause the game, and play to continue the game.<br>
+                Press shop button to browse the shop.<br>
+                Press help button for this help menu.<br>
+            </p>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
 
 </body>
 </html>
